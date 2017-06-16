@@ -1,0 +1,82 @@
+
+
+svg {
+
+    border: 0.3px solid black;
+
+
+
+    margin-bottom: 5px;
+
+}
+
+.dummybox{
+
+    border: none;
+}
+
+svg text{
+    stroke: #000;
+    stroke-width: 0;
+    font-weight: normal;
+    text-align: center;
+    text-anchor: middle;
+    text-shadow: none;
+}
+
+.tooltip {
+    position: absolute;
+    width: 200px;
+    height: 28px;
+    pointer-events: none;
+
+}
+
+.panel {
+
+    width: 100%;
+
+}
+
+
+body {
+    font: 10px sans-serif;
+}
+
+.xaxis path {
+    fill: none;
+    stroke: #000;
+
+}
+
+.xaxis line{
+
+    shape-rendering: crispEdges;
+    stroke: #000;
+}
+
+.yaxis path {
+    fill: none;
+    stroke: #000;
+
+}
+
+.yaxis line{
+
+    shape-rendering: crispEdges;
+    stroke: #000;
+}
+
+.bar  {
+    fill: steelblue;
+}
+
+.bar text.value {
+    fill: white;
+}
+
+
+svg .svg2{
+
+    border:  1px solid red;
+}

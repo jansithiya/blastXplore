@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title> Sequence Alignment Visualizations </title>
+<head>
+
+    <!--  ********** Load All stylesheets and dependencies ********** !-->
+
+    <!-- Vendor Bootstrap CSS !-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/font-awesome-4.6.3/css/font-awesome.min.css">
+
+    <!--Style BLAST-Xplore home page !-->
+
+    <link href="../../css/feature.css" rel="stylesheet">
+
+    <style>
+
+        #view1 {
+
+            margin-left: 10%;
+        }
+
+        .panel-heading {
+
+            background-color: #737373;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<!-- ***************************************** Navigation Bar **************************************************** !-->
+
+<!-- Collapsible Navigation Bar layout that hides the navigation bar when window is re-sized !-->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../index.html">BLAST-Xplore</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="../../index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="../../pages/about.html"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-bar-chart"
+                                                                                   aria-hidden="true"></i>
+                        Visualizations <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../../pages/Taxonomy/taxonomy.html">Taxonomy</a></li>
+                        <li><a href="../../pages/Wordle/titleCloud.html">BlastCloud</a></li>
+                        <li><a href="#">Sequences</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="../../pages/about.html"><span class="glyphicon glyphicon-question-sign"></span> Help </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- **************************************** Introduction Panel ************************************************* !-->
+
+
+<div class="container" class="panel panel-default">
+    <div class="panel-heading">Sequence Alignment Viewer</div>
+    <div class="panel-body">Sequence Alignment Viewer allows users to interactively visualize the BLAST output alignment
+        position between query and hit sequences
+    </div>
+</div>
+
+<!-- ****************************************** Viz Selection by Type Container *********************************** !-->
+
+
+<div class="container" id="explorer">
+    <div class="panel panel-primary">
+        <div class="panel-heading"> Choose the view</div>
+        <br>
+        <div class="row text-center">
+
+            <div class="col-md-4 col-sm-6 hero-feature" id="view1">
+                <div class="thumbnail">
+                    <img src="../../assets/alignment_1.png" alt="">
+                    <div class="caption">
+                        <br>
+                        <h3> Traditional Horizontal Layout </h3>
+                        <p></p>
+                        <p>
+                            <a href="SequenceAlignment_type2.html" class="btn btn-primary">Explore!</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="../../assets/alignment_2.png" alt="">
+                    <div class="caption">
+                        <h3> Display Panel per Subject </h3>
+                        <p></p>
+                        <p>
+                            <a href="SequenceAlignment_Type1.html" class="btn btn-primary">Explore!</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--  ******************************** Load all JavaScript dependencies ******************************************* !-->
+
+
+    <!-- Vendor: jQuery !-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <!-- Vendor: BootStrap !-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+
+</body>
+</html>

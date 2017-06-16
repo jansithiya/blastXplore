@@ -1,0 +1,148 @@
+#introduction{
+
+    margin-top: 0 ;
+    padding: 0;
+}
+
+.modal-header{
+
+    text-align: left;
+}
+
+#info{
+
+    width: 10%;
+    text-align: center;
+    margin: 0 ;
+    background-color:#525252 ;
+    border-color: #525252;
+
+}
+
+
+.close{
+
+    width: 5%;
+}
+
+
+#close2{
+
+    width: 15%;
+}
+
+
+.container{
+    margin:0 auto;
+}
+
+.sidebar{
+
+    height: 600px;
+
+    /* background-color: #f5f5f5; */
+}
+
+.sidebar.col-md-2{
+outline: 1px solid #969696;
+    background-color:#f0f0f0;
+padding: 15px ;
+
+    -ms-transform: translate(10px, 0px); /* IE 9 */
+    -webkit-transform: translate(10px, 0px); /* Safari */
+    transform: translate(10px, 0px);
+}
+
+.sidebar .col-md-10{
+
+    margin: 0 auto;
+}
+
+
+/* Input Control Style */
+
+#ICtitle{
+
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    line-height: 20px;
+}
+
+
+
+.slider{
+
+    margin-top:20px;
+
+}
+
+.slider.slider-horizontal .slider-track{
+
+    background-image: none;
+    box-shadow: none;
+    background-color:  #d9d9d9;
+
+
+}
+
+#ICtitle.well-sm{
+
+    background-color: #525252;
+    color: white;
+}
+
+
+
+.label-default{
+
+    text-align: center;
+    text-anchor: middle;
+    width: 90%;
+    box-sizing: border-box;
+    float:left;
+    margin-left: 5%;
+    line-height: 20px;
+
+}
+
+
+/* -------------------------- Frequency Slider ----------------------------------------*/
+
+#freqRange {
+
+    text-align: center;
+    text-anchor: middle;
+    margin-left: 20px;
+    margin-top:20px;
+}
+
+#labelRange{
+    text-align: center;
+    text-anchor: middle;
+    margin-left: 80px;
+}
+
+#slider-range{
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    margin-left: 20px;
+}
+
+/* ------------------------ Word Position Input ----------------------------------------- */
+
+
+#position, #rotation, #font-type, #color{
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.bootstrap-select>.dropdown-toggle {
+
+
+    width: 80%;
+
+}

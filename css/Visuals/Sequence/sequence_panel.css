@@ -1,0 +1,39 @@
+#holder{
+
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+
+}
+g.mar{
+    border: 1px solid blue;
+    box-sizing: border-box;
+
+
+
+}
+
+body{
+
+    font: 10px sans-serif;
+}
+
+
+
+.xaxis path, .yaxis path{
+
+    fill: none;
+    stroke: #000;
+
+
+
+}
+
+
+
+svg{
+
+    border: 1px solid black;
+
+}

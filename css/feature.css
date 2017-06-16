@@ -1,0 +1,151 @@
+body{
+
+   background:  #f6f6f6;
+}
+
+
+.navbar{
+
+   background-color: #fff;
+    border-color: #fff;
+
+}
+
+.navbar-inverse .navbar-brand{
+
+    color:#333;
+}
+div.row.text-center{
+
+    margin-left: 0px;
+}
+
+
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #333;
+    font-size: 16px;
+ font-family: "pp-sans-big-regular", Helvetica Neue, Arial, sans-serif;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-brand:hover {
+    color: #2171b5;
+    font-weight: bold;
+   text-decoration: underline;
+
+
+}
+
+a.dropdown-toggle:active, a.dropdown-toggle:hover, a.dropdown-toggle:visited{
+
+    color: #2171b5;
+    font-weight: bold;
+    text-decoration: underline;
+
+}
+
+.navbar-inverse .navbar-nav>.open>a, a.dropdown-toggle:visited, a.dropdown-toggle, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:visited {
+    color: #2171b5;
+    background-color: #fff;
+}
+
+
+
+
+.panel-primary {
+    border-color: #737373;
+
+}
+
+
+
+
+
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #737373;
+    border-color: #737373;
+}
+
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background-color: white;
+    outline: none;
+    cursor: inherit;
+    display: block;
+
+}
+
+label{
+    margin-left: 30px;
+    font-size: 14px;
+
+}
+
+
+button{
+
+    width: 50%;}
+
+
+div#textboxbrowse{
+
+    width: 50%;
+}
+
+label.btn {
+
+    width: 100%;
+}
+
+.browsebutton{
+
+    margin-left: 120px;
+    width: 50%;
+    background-color: #d9d9d9;
+    padding: 10px;
+}
+
+
+.browsebutton input[type=file]{
+
+    margin-left: 200px;
+    width: 50%;
+
+}
+
+
+
+#uploader{
+
+    margin: 0 auto;
+    width: 50%;
+}
+
+#uploadbutton{
+    margin: 0 auto;
+
+    text-align: center;
+    width: 30%;
+}
+
+#uploadmessage{
+
+    text-align: center;
+}
+
+#introduction h2, h3{
+
+    display: inline;
+
+}
+

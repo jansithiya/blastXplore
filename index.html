@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BLAST-Xplore: Visualize BLAST output in your browser</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--  ********** Load All stylesheets a nd dependencies ********** !-->
+
+    <!-- Vendor Bootstrap CSS !-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/vendor/font-awesome-4.6.3/css/font-awesome.min.css">
+
+    <!--Style BLAST-Xplore home page !-->
+
+    <link href="css/home.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+<!-- ***************************************** Navigation Bar **************************************************** !-->
+
+<!-- Collapsible Navigation Bar layout that hides the navigation bar when window is re-sized !-->
+
+<nav class="navbar navbar-inverse"> <!--data-spy="affix" data-offset-top="0" !-->
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">BLAST-Xplore</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="pages/about.html"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="pages/help.html"><span class="glyphicon glyphicon-question-sign"></span> Help </a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!--  *************************************** Introduction ****************************************************** !-->
+
+<div class="container" id="introduction">
+    <div class="well well-sm"><h2>BLAST-Xplore: </h2> <h4> A web based tool for visual exploration of BLAST program
+        output </h4></div>
+</div>
+<br>
+
+<!--  *************************************** File Uploader Container ********************************************* !-->
+
+<div class="container" id="uploadpanel">
+    <div class="panel panel-primary">
+        <div class="panel-heading" id="step1"><b> STEP 1 : </b> &nbsp Upload your BLAST output file</div>
+        <div class="panel-body"> Select your BLAST output file below using file selector and click submit. Please note
+            that the tool currently supports only the output file of formats below; also Taxonomy and Sequence alignment
+            not supported in this showcase
+        </div>
+        <div class="row">
+            <div class="col-sm-4" id="fileformatinfo"><br> &nbsp &nbsp &nbsp <b>Supported File Formats: </b> <span
+                    class="glyphicon glyphicon-file"></span>
+                <ul>
+                    <li>.txt Output format 7</li>
+                    <a href="https://drive.google.com/open?id=0B0U3T-l0nqzZcUxSYmNuX3lpbjg">
+                        <li> Sample Data (Word Cloud)</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="col-sm-8 text-center" id="choosefile">
+                <div class="fileinput" id="uploader">
+                    <input type="file" id="file1" class="filestyle" data-placeholder="No file"
+                           data-buttonName="btn-primary">
+                </div>
+
+
+                <br>
+
+                <div class="uploadbutton" id="uploadbutton">
+                    <button type="button" id="submitbutton" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div id="uploadmessage">
+        </div>
+    </div>
+</div>
+
+
+<!-- **** Visualization Explorer **** !-->
+
+<div class="container" id="explorer">
+    <div class="panel panel-primary">
+        <div class="panel-heading" id="step2"><b> STEP 2 : &nbsp </b> Explore....</div>
+        <br>
+        <div class="row text-center">
+
+            <div class="col-md-4 col-sm-6 hero-feature">
+
+            </div>
+
+            <div class="col-md-4 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="assets/wordle.png" alt="">
+                    <div class="caption">
+                        <h3>BLAST-Cloud</h3>
+                        <p> Wordle of frequently occurring words in the BLAST hits title </p>
+                        <p>
+                            <button class="btn btn-primary" id="BlastCloud">Explore!</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 hero-feature">
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--  ******************************** Load all JavaScript dependencies ******************************************* !-->
+
+
+    <!-- Vendor: jQuery !-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <!-- Vendor: BootStrap !-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+    <!-- Vendor: filestyle for file upload !-->
+    <script src="js/Vendor/bootstrap-filestyle.min.js"></script>
+
+    <!-- upload handling script !-->
+    <script src="js/DataProcessing/upload2.js"></script>
+
+
+</body>
+</html>

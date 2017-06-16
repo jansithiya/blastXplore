@@ -1,0 +1,57 @@
+
+
+text {
+    font: 10px sans-serif;
+}
+
+tspan:last-child {
+    font-size: 9px;
+    fill-opacity: 0.8;
+}
+
+.node rect {
+    shape-rendering: crispEdges;
+}
+
+.node--hover rect {
+    stroke: #000;
+}
+text {
+    pointer-events: none;
+}
+
+.grandparent text {
+    font-weight: bold;
+}
+
+rect {
+    fill: none;
+    stroke: #fff;
+}
+
+rect.parent,
+.grandparent rect {
+    stroke-width: 2px;
+}
+
+.grandparent rect {
+    fill: orange;
+}
+
+.grandparent:hover rect {
+    fill: #ee9700;
+}
+
+.children rect.parent,
+.grandparent rect {
+    cursor: pointer;
+}
+
+.children rect.parent {
+    fill: #bbb;
+    fill-opacity: .5;
+}
+
+.children:hover rect.child {
+    fill: #bbb;
+}

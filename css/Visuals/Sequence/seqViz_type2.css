@@ -1,0 +1,99 @@
+
+/* -------------------------------------------- Navbar and Page Header -------------------------------------------- */
+
+body { padding-top: 100px;
+
+}
+
+.navbar{
+
+    margin-bottom:0;
+
+}
+.page-header{
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-top: 0;
+    text-align: center;
+}
+
+.sidebar {
+    position: fixed;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 0;
+    padding-left: 0;
+}
+/* -------------------------------------------- SVG div ---------------------------------------------------------*/
+
+#queryAxis{
+    margin-bottom:0;
+    display: block;
+    margin-top: 0;
+    padding-top: 0;
+    background:  #f6f6f6;
+    position: fixed;
+
+}
+
+#chart{
+    padding-top:70px;
+}
+
+
+/* ---------------------------------------------Tool tip related  -------------------------------------------------- */
+
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    height: 28px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+
+/* ------------------------------------------------- Axis Related ---------------------------------------------------*/
+
+.xaxis{
+    position: fixed;
+}
+
+
+.xaxis path {
+    fill: none;
+    stroke: #525252;
+    position: fixed;
+}
+
+.xaxis line{
+
+    shape-rendering: crispEdges;
+    stroke: #525252;
+    position: fixed
+}
+
+
+.xaxis path text{
+
+    fill: #252525;
+
+}
+
+.xTitle{
+
+    fill: #08519c;
+    font-size: 15px;
+    font-weight: bold;
+    transform:translate(20px,0px);
+}

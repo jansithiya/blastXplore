@@ -1,0 +1,106 @@
+<h1 id="blastxplorer"><strong>BLASTXplorer</strong></h1>
+<p>BLASTXplorer interface allows to visualize and explore the contents BLAST program output file depending on the fields available. The key visual interface of BLASTXplore is wordle visualization of BLAST description based on frequency, frequncy by position, etc., Further there are separate interfaces to visualize taxonomy information if provided and also the sequence alignment itself.</p>
+<h1 id="browser-requirements"><strong>Browser Requirements</strong></h1>
+<p>BLASTXplorer uses JavaScript, HTML5 and svg element to visualize the phylogenetic tree. So it recommended to use modern browsers like chrome, firefox and safari, however, it is highly recommended to use Google Chrome as the application has been extensively tested in Chrome at the moment and also seem to offer the best performance.</p>
+<h1 id="data-format"><strong>Data format</strong></h1>
+<p>Currently the BLASTXplorer supports the <b> output format 7 </b> from command line applications. <b> Output format 7 </b> is tabular format with comment lines. Below is the example of output format 7 with as much as fields as possible from command line app. Note that the visualization requires respective content be available on the output file, for example, taxonomy related info to render one of the hierarchical layout for taxonomy; similarly description field for word cloud.</p>
+<div class="figure">
+    <img src="../assets/outputFormat_1.png" title="DATA format" alt="alt text" /><p class="caption">alt text</p>
+</div>
+<div class="figure">
+    <img src="../assets/outputFormat_2.png" title="DATA format" alt="alt text" /><p class="caption">alt text</p>
+</div>
+<h1 id="interface"><strong>Interface</strong></h1>
+<p>The main user interface comprises of following</p>
+<h3 id="file-input">1. File Input</h3>
+<p>The glyphicon on the navbar in the top right where the end user uploads the tree in &quot;Newick&quot; format as described above</p>
+<h3 id="layout">2. Layout</h3>
+<p>Normally the div where the tree is rendered or displayed is in the center to the left of the paramters control and just below the navigation bar on the top</p>
+<h3 id="visualization-display-area">2.1. Visualization Display Area</h3>
+<p>Normally the div where the tree is rendered or displayed is in the center to the left of the paramters control and just below the navigation bar on the top</p>
+<h3 id="parameters-control">2.2. Parameters Control</h3>
+<p>Displays all html elements to control the tree related parameters in display level such as dendogram or regular phylogram; Also the input to collapse the depth of the tree and other styling attributes depending on the display layout chosen</p>
+<div class="figure">
+    <img src="../assets/mainInterface.png" title="BLASTXplore User Interface" alt="alt text" /><p class="caption">alt text</p>
+</div>
+<p>Once the visualization layout is chosen the user will end up in the visual interface corresponding to the chosen design/layout and the organisation is consistent across the different design interfaces with parameter control on left and display area in the middle.</p>
+<div class="figure">
+    <img src="../assets/interface_2.png" title="Display User Interface" alt="alt text" /><p class="caption">alt text</p>
+</div>
+<h1 id="visualization-interface"><strong>Visualization Interface</strong></h1>
+<h3 id="taxonomy">1. Taxonomy</h3>
+<p>Taxonomy allows hierarchical data to be explored with different visualization method suitable for hierarchical data. Charts can be created when relevant taxonomy information is provided in the output file uploaded. The example takes subject scientific names, blast names and kingdom to visualize the same.</p>
+<h4 id="sankey">1.1 Sankey</h4>
+<p><a href="https://en.wikipedia.org/wiki/Sankey_diagram"></a> Sankey layout is typically used for visualizing flow and here it is utilized for representing hierarchical flow of information.</p>
+<h4 id="circular-treemap">1.2 Circular Treemap</h4>
+<p>Circular treemap is a variation of treemap that uses circle instead of rectangles and is a space constrained visualization technique. Each containment represents a level in the hierarchy.</p>
+<h4 id="zoomable-pie-chart">1.3 Zoomable Pie Chart</h4>
+<p>Another space filling technique that uses radial layout and supports zooming to go deep in hierarchy.</p>
+<h4 id="treemap">1.4 Treemap</h4>
+<p><a href="http://www.cs.umd.edu/hcil/treemap-history/"></a> Treemap is a space constrained layout that uses nested rectangles to depict hierarchies.</p>
+<div class="figure">
+    <img src="../assets/taxonomy.png" title="taxonomy" alt="alt text" /><p class="caption">alt text</p>
+</div>
+<h3 id="blast-cloud-wordle">2. BLAST-Cloud (Wordle)</h3>
+<p>Creates word cloud for the BLAST subject description provided and works if the description field is available in the uploaded file. This is particularly useful to reveal unique hits that can be identified from textual information rather than having to go deep into the hit table which is time consuming.</p>
+<p>Further the parameters can be controlled to keep only the first three or five words depending on the position chosen and also the frequency of occurrences.</p>
+<div class="figure">
+    <img src="../assets/wordle2.png" title="wordle" alt="alt text" /><p class="caption">alt text</p>
+</div>
+<h3 id="sequenceviz-alignment">3. SequenceViz (Alignment)</h3>
+<p>Here the subject sequences alignment can be visualized in horizontal bar layout and as individual plots or small multiples and coloring as per bit score</p>
+<div class="figure">
+    <img src="../assets/alignment_1.png" title="Sequence Alignment" alt="alt text" /><p class="caption">alt text</p>
+</div>
+<h1 id="code-flow-how-it-works"><strong>Code Flow &amp; How it Works</strong></h1>
+<p>As stated before BLASTXplorer makes use of browser to visualize and therefore we make use of JavaScript, SVG and Bootstrap for styling.</p>
+<h4 id="key-dependencies">Key Dependencies</h4>
+<ul>
+    <li>
+        <a href="https://d3js.org/">D3.js </a>
+    <li>
+        <a href="https://jquery.com/"> jQuery </a>
+</ul>
+
+<p>All the external libraries used are under <b>vendor </b>directory for both css and js</p>
+<p>The four key blocks of each app is &quot;reading and parsing data&quot;, &quot;apply initial settings&quot;, &quot;core computations&quot; and &quot;render/draw&quot;. The flow is more or less the same across the visual layout JavaScript files</p>
+<h5 id="reading-and-parsing">Reading and Parsing</h5>
+<p>The key file uploaded is normally in tabular format and is parsed first the parsing is done within <b>parseFile </b> function in input.js and then depending on the data type (taxonomy, word description, sequence) additional data processing is done to structure the data suitable for d3.js</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="fu">parseFile</span>(blastFile) {
+
+           <span class="co">//regular expressions</span>
+
+          <span class="kw">var</span> parsedData = <span class="ot">d3</span>.<span class="ot">tsv</span>.<span class="fu">parse</span>(blastFile);
+
+
+}</code></pre>
+<h5 id="initial-settings-block">Initial Settings Block</h5>
+<p>The code within this applies default settings to the html elements in the sidebar (parameter controls) if necessary</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">
+<span class="kw">function</span> <span class="fu">initialSettings</span>() {
+
+       <span class="ot">document</span>.<span class="fu">getElementById</span>(<span class="st">&quot;depthSlider&quot;</span>).<span class="fu">value</span> = maxDepth/<span class="dv">2</span>;
+       <span class="fu">render</span>();
+ }</code></pre>
+<h5 id="renderdraw">Render/Draw</h5>
+<p>The render block actually draws the tree on browser leveraging mainly D3.js library and svg. Render block also contains the function that does some action when a change is detected in any of the html input elements such as slider, button, etc.,</p>
+<h6 id="example">Example</h6>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">
+<span class="kw">function</span> <span class="fu">render</span>(){
+
+
+     <span class="co">//append elements to svg depending on layout chosen</span>
+
+    <span class="co">//some actions example</span>
+       <span class="ot">d3</span>.<span class="fu">select</span>(<span class="st">&quot;#font&quot;</span>).<span class="fu">on</span>(<span class="st">&quot;change&quot;</span>, <span class="kw">function</span> () {
+
+            <span class="kw">var</span> fontType = <span class="fu">$</span>(<span class="st">&quot;#font&quot;</span>).<span class="fu">val</span>();
+
+            <span class="ot">d3</span>.<span class="fu">select</span>(<span class="st">&quot;#chart&quot;</span>).<span class="fu">selectAll</span>(<span class="st">&quot;text&quot;</span>).<span class="fu">style</span>(<span class="st">&quot;font-family&quot;</span>, fontType);
+
+        });
+
+
+
+
+    }</code></pre>

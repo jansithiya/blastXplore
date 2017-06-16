@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Taxonomy: Hierarchy Treemap Layout<</title>
+
+    <!-- ***************************************** CSS Dependencies ************************************************** !-->
+    <!-- Bootstrap Core CSS !-->
+    <link href="../../css/vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font-Awesome //For Glyphicons !-->
+    <link href="../../css/vendor/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap select multiple !-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--  Viz page custom !-->
+    <link href="../../css/Pages/vizPages.css" rel="stylesheet">
+    <!-- Visualization custom !-->
+    <link href="../../css/Visuals/Taxonomy/taxTreeMap.css" rel="stylesheet">
+
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!-- * Sidebar for key controls !-->
+        <div class="col-sm-3 col-md-2 sidebar" id="control" >
+
+            <!-- Parameter Control Heading !-->
+            <div class="panel panel-default sidebarTitle">
+                <div class="panel-body"> Parameter Settings</div>
+            </div>
+            <!-- Parameter Control Options !-->
+            <ul class="nav side-menu">
+
+                <li><a> <i class="fa fa-font  p p3" aria-hidden="true"></i>&nbsp; Text  <span class="fa fa-chevron-down d d3"></span></a>
+                    <ul class="nav child_menu pc pc3">
+                        <li>
+                            <a>
+                                <label for="textShow" class="pclabel"> Text Show/Hide</label>
+                                <select class="form-control dropdown pcControl dd1" id="textShow">
+                                    <option>SHOW</option>
+                                    <option>HIDE</option>
+                                </select>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <label for="font" class="pclabel"> Font:</label>
+                                <select class="form-control dropdown pcControl dd2" id="font">
+                                    <option value="sans-serif">Default</option>
+                                    <option value="Arial">Arial</option>
+                                    <option value="Cambria">Cambria</option>
+                                    <option value="Comic Sans MS">Comic Sans MS</option>
+                                    <option value="Helvetica Neue">Helvetica</option>
+                                    <option value="Impact">Impact</option>
+                                    <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+                                    <option value="Tahoma">Tahoma</option>
+                                    <option value="Times New Roman">Times New Roman</option>
+                                    <option value="Trebuchet MS">Trebuchet MS</option>
+                                    <option value="Verdana">Verdana</option>
+                                </select>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <label for="fontSize" class="pclabel"> Font Size:</label>
+                                <select class="form-control dropdown pcControl dd2" id="fontSize">
+                                    <option value="10px">10</option>
+                                    <option value="6px">6</option>
+                                    <option value="8px">8</option>
+                                    <option value="12px">12</option>
+                                    <option value="14px">14</option>
+                                    <option value="16px">16</option>
+                                    <option value="18px">18</option>
+                                    <option value="20px">20</option>
+                                    <option value="24px">24</option>
+                                </select>
+
+                            </a>
+                        </li>
+
+                        <li>
+                            <a>
+                                <label  for="fontColor" class="pclabel"> Font Color:</label>
+                                <input type="color" name="favcolor" value="black" id="fontColor">
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+            </ul>
+
+        </div>
+
+        <!-- /End of sidebar for controls !-->
+
+        <!--   Top Navigation bar and container for main visualization !-->
+        <div class="col-sm-9 col-md-10">
+            <nav class="navbar navbar-inverse navbar-fixed-top topnav">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand"><span class="glyphicon glyphicon-tasks controlToggle"> </span> </a>
+                        <a class="navbar-brand brand"> BLAST-Xplore</a>
+                        <a class="navbar-brand title">Taxonomy: Hierarchy Treemap Layout</a>
+
+
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><span class="glyphicon glyphicon-info-sign glyphTopnav"></span></a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-file glyphTopnav"></span> </a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-comment glyphTopnav"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="chart">
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- ****************************************** JavaScript Dependencies ********************************************** !-->
+<!-- jQuery !-->
+<script src="../../js/Vendor/jquery-3.1.0.min.js"></script>
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- Bootstrap core !-->
+<script src="../../css/vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Custom page script !-->
+
+<script src="../../js/customPages/custom_Controls_V1.js"></script>
+
+<!-- D3 library !-->
+
+<script src="//d3js.org/d3.v4.0.0-alpha.35.min.js"></script>
+
+<!-- Tax Json Processing !-->
+
+<script src="../../js/DataProcessing/treeParse.js"></script>
+
+<!-- Sunburst Visualization Script !-->
+
+<script src="../../js/Visuals/Taxonomy/taxTreeMap.js"></script>
+
+</body>
+</html>
+
+
